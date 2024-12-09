@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Calculadora de IMC</h1>
+
+<h2>Añadir Persona</h2>
+<form id="formAñadir">
+    <label for="nombre">Nombre: </label><input type="text" id="nombre" required><br>
+    <label for="peso">Peso (kg): </label><input type="number" id="peso" required><br>
+    <label for="altura">Altura (m): </label><input type="number" id="altura" step="0.01" required><br>
+    <button type="submit">Añadir Persona</button>
+</form>
+
+<h2>Modificar Persona</h2>
+<form id="formModificar">
+    <label for="modNombre">Nombre: </label><input type="text" id="modNombre" required><br>
+    <label for="modPeso">Nuevo Peso (kg): </label><input type="number" id="modPeso" required><br>
+    <label for="modAltura">Nueva Altura (m): </label><input type="number" id="modAltura" step="0.01" required><br>
+    <button type="submit">Modificar Datos</button>
+</form>
+
+<button id="calcularIMC">Calcular IMC</button>
+<button id="borrarDatos">Borrar Todos los Datos</button>
+
+<h2>Lista de Personas</h2>
+<table id="tablaPersonas">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Peso (kg)</th>
+            <th>Altura (m)</th>
+            <th>IMC</th>
+            <th>Categoría</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Personas Fuera del Peso Normal</h2>
+<table id="tablaFueraDeRango">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>IMC</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!-- Incluye jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- Vincula tu archivo JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
